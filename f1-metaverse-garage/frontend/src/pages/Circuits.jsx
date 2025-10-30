@@ -186,7 +186,7 @@ export default function Circuits() {
         </div>
       </div>
 
-      <button className="start-btn" onClick={() => navigate("/arena")}>
+      <button className="start-btn" onClick={() => navigate("/race")}>
         Start Race →
       </button>
     </div>
