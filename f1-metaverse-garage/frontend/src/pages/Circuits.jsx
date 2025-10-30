@@ -3,14 +3,17 @@ import axios from "axios";
 import "./Circuits.css";
 import { useNavigate } from "react-router-dom";
 import backgroundCircuit from "../assets/background-circuit.png"; // ✅ use your image
+import monzaImg from "../assets/monza_f1_circuit.jpeg";
+import silverstoneImg from "../assets/Silverstone_f1_circuit.jpeg";
+import monacoImg from "../assets/Monaco_f1_circuit.jpeg";
+import spaImg from "../assets/spa_f1_circuit.jpg";
 
 const tracks = [
-  { name: "Monza", country: "Italy", img: "https://i.imgur.com/xmbyiJR.jpg" },
-  { name: "Silverstone", country: "Great Britain", img: "https://i.imgur.com/RWwGJZZ.jpg" },
-  { name: "Monaco", country: "Monaco", img: "https://i.imgur.com/T0vdrYY.jpg" },
-  { name: "Spa", country: "Belgium", img: "https://i.imgur.com/a7JObkX.jpg" },
+  { name: "Monza", country: "Italy", img: monzaImg },
+  { name: "Silverstone", country: "Great Britain", img: silverstoneImg },
+  { name: "Monaco", country: "Monaco", img: monacoImg },
+  { name: "Spa", country: "Belgium", img: spaImg },
 ];
-
 export default function Circuits() {
   const [selectedTrack, setSelectedTrack] = useState("Monza");
   const [aiDifficulty, setAiDifficulty] = useState(85);
@@ -183,7 +186,7 @@ export default function Circuits() {
         </div>
       </div>
 
-      <button className="start-btn" onClick={handleStartRace}>
+      <button className="start-btn" onClick={() => navigate("/arena")}>
         Start Race →
       </button>
     </div>

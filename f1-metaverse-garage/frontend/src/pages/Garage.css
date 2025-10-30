@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;600&display=swap');
+
+.page {
+  background: radial-gradient(circle at center, #0d0d0d, #000);
+  color: white;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Top Bar ===== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+}
+
+.logo-ball {
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 50%;
+  box-shadow: 0 0 10px red;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav a.active {
+  color: #ff2c2c;
+  font-weight: bold;
+}
+
+.credits {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: url("https://i.imgur.com/6YVQZ3f.png") center/cover;
+}
+
+/* ===== Main Container ===== */
+.container {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr 1.2fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Left Panel */
+.left-panel .team {
+  color: #ff2c2c;
+  font-weight: 600;
+}
+
+.left-panel .desc {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.stat-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bar {
+  background: rgba(255, 255, 255, 0.1);
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fill {
+  background: linear-gradient(90deg, #ff2c2c, #ff7b7b);
+  height: 100%;
+}
+
+/* Center Panel */
+.car-image {
+  text-align: center;
+}
+
+.car-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Right Panel */
+.right-panel h3 {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 15px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tab.active {
+  background: #ff2c2c;
+}
+
+.livery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.livery {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.livery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.livery.selected {
+  border-color: #ff2c2c;
+}
+
+.livery.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.confirm-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff2c2c, #c71818);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.confirm-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer (Car Selection) */
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.car-thumb {
+  text-align: center;
+  width: 120px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.car-thumb img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.car-thumb p {
+  font-weight: 600;
+  margin: 5px 0 2px;
+}
+
+.car-thumb span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.car-thumb.selected {
+  transform: scale(1.08);
+  border: 2px solid #ff2c2c;
+  border-radius: 10px;
+}

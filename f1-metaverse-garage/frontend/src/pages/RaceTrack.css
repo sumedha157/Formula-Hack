@@ -1,0 +1,92 @@
+.race-track-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #050505, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.race-canvas {
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.3);
+}
+
+.hud {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 60px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.hud h1 {
+  color: #ff2424;
+  margin: 0;
+  font-size: 50px;
+}
+
+.hud p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+button.start {
+  background: linear-gradient(90deg, #ff2424, #b31212);
+}
+
+button.stop {
+  background: #333;
+}
+
+button.exit {
+  background: #1b1b1b;
+}
+
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: #ff2424;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}

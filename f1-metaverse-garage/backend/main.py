@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from ai.trainer import train_driver
+import random
 
 app = FastAPI()
 
@@ -61,3 +62,11 @@ def predict(setup: Setup):
     performance_score = (setup.engine * 0.5) + (setup.downforce * 0.3) - (setup.drag * 0.2)
     lap_time = 90 - (performance_score * 0.2)
     return {"predicted_lap_time": lap_time}
+
+
+@app.get("api/ai/drive")
+def ai_drive():
+    return{
+        "throttle": random.uniform(0.8,0.1),
+        "steering":random.uniform(-0.1, 0.1)
+    }
