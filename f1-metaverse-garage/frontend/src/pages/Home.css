@@ -1,0 +1,219 @@
+
+/* App.css - Start Your Engine theme */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg-dark: #020202;
+  --panel-dark: rgba(5,5,5,0.55);
+  --accent: #e21b1b;
+  --muted: rgba(255,255,255,0.6);
+}
+
+/* Reset basics */
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; margin: 0; }
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg-dark);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App container uses hero background image */
+.back {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* dark glass overlay to ensure text contrast */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
+  z-index: 0;
+  backdrop-filter: blur(2px);
+}
+
+/* Topbar */
+.topbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 12px 28px;
+  gap: 12px;
+  background: transparent;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.brand-title {
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+/* Player card */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+.player img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+.player-info {
+  display: flex;
+  flex-direction: column;
+}
+.player-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+.player-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Center area */
+.center-area{
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  max-width: 760px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+/* Title uses a thicker display font */
+.title{
+  font-family: "Orbitron", monospace;
+  font-weight: 900;
+  font-size: 64px;
+  margin: 6px 0 12px;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+/* Subtitle */
+.subtitle{
+  max-width: 560px;
+  margin: 0 auto 26px;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* Buttons group */
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Primary start button */
+.menu-btn {
+  width: 320px;
+  max-width: 90%;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+/* Primary style */
+.menu-btn.primary{
+  background: linear-gradient(180deg,var(--accent), #c71818);
+  width: 360px;
+  max-width: 92%;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  box-shadow: 0 12px 36px rgba(226,27,27,0.28);
+}
+
+/* hover/active */
+.menu-btn:hover { transform: translateY(-3px); }
+.menu-btn:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+
+/* Quit button lighter */
+.quit{
+  margin-top: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* footer tiny links */
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:36px;
+  color: var(--muted);
+  z-index: 2;
+}
+.footer-links a{
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* copyright */
+copyright, .copyright{
+  margin-top: 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.38);
+}
+
+/* small screens */
+@media (max-width: 600px){
+  .title { font-size: 36px; }
+  .menu-btn.primary { width: 86%; }
+  .menu-btn { width: 86%; }
+  .player { display: none; } /* simplify topbar on small screens */
+}
