@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Circuits.css";
 import { useNavigate } from "react-router-dom";
+import backgroundCircuit from "../assets/background-circuit.png"; // ✅ use your image
 
 const tracks = [
   { name: "Monza", country: "Italy", img: "https://i.imgur.com/xmbyiJR.jpg" },
@@ -24,7 +25,6 @@ export default function Circuits() {
 
   const handleStartRace = async () => {
     try {
-      // Send race setup to backend
       const raceConfig = {
         track: selectedTrack,
         ai_difficulty: aiDifficulty,
@@ -37,11 +37,7 @@ export default function Circuits() {
         dynamic_weather: dynamicWeather,
       };
 
-      const response = await axios.post("http://127.0.0.1:8000/api/race/setup", raceConfig);
-
-      console.log("Race setup saved:", response.data);
-
-      // Navigate to garage or training after setup
+      await axios.post("http://127.0.0.1:8000/api/race/setup", raceConfig);
       navigate("/garage");
     } catch (err) {
       console.error("Error saving race config:", err);
@@ -49,8 +45,21 @@ export default function Circuits() {
     }
   };
 
+  // ✅ Background styling using your local image
+  const backgroundStyle = {
+    backgroundImage: `url(${backgroundCircuit})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+    width: "100%",
+    position: "relative",
+  };
+
   return (
-    <div className="app">
+    <div className="app" style={backgroundStyle}>
+      <div className="overlay" /> {/* ✅ same overlay for readability */}
+
       <div className="header">
         <h2>🏁 Race Setup</h2>
         <button className="back-btn" onClick={() => navigate("/")}>
@@ -59,6 +68,7 @@ export default function Circuits() {
       </div>
 
       <h3>Select Track</h3>
+
       <div className="track-grid">
         {tracks.map((t) => (
           <div
