@@ -17,7 +17,7 @@
   background-color: #111;
 }
 
-/* HUD */
+
 .hud {
   position: absolute;
   bottom: 40px;
@@ -44,7 +44,7 @@
   color: #bbb;
 }
 
-/* Controls */
+
 .controls {
   position: absolute;
   top: 30px;
@@ -76,7 +76,7 @@ button.stop {
 button.exit {
   background: #1c1c1c;
 }
-/* Countdown Overlay */
+
 .countdown-overlay {
   position: absolute;
   top: 50%;

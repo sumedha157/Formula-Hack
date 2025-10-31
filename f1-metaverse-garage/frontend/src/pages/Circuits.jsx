@@ -48,7 +48,6 @@ export default function Circuits() {
     }
   };
 
-  // ✅ Background styling using your local image
   const backgroundStyle = {
     backgroundImage: `url(${backgroundCircuit})`,
     backgroundSize: "cover",
@@ -61,7 +60,7 @@ export default function Circuits() {
 
   return (
     <div className="app" style={backgroundStyle}>
-      <div className="overlay" /> {/* ✅ same overlay for readability */}
+      <div className="overlay" />
 
       <div className="header">
         <h2>🏁 Race Setup</h2>
@@ -89,7 +88,6 @@ export default function Circuits() {
       </div>
 
       <div className="settings-grid">
-        {/* Race Settings */}
         <div className="settings-card">
           <h4>Race Settings</h4>
           <div className="setting">
@@ -126,7 +124,6 @@ export default function Circuits() {
           </div>
         </div>
 
-        {/* Gameplay Settings */}
         <div className="settings-card">
           <h4>Gameplay Settings</h4>
           <div className="setting">
@@ -160,7 +157,6 @@ export default function Circuits() {
           </div>
         </div>
 
-        {/* Weather Settings */}
         <div className="settings-card">
           <h4>Weather Settings</h4>
           <div className="weather-options">

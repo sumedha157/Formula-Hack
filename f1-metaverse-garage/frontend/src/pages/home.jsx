@@ -1,13 +1,9 @@
 import React from "react";
-import "./Home.css"; // renamed from App.css for clarity
+import "./Home.css"; 
 import heroImg from "../assets/hero.png";
 import avatarImg from "../assets/avatar.jpeg";
 import { useNavigate } from "react-router-dom";
 
-/*
-  START YOUR ENGINE - F1 Metaverse Garage Landing Page
-  (Adapted from your reference design)
-*/
 
 function TopBar() {
   return (

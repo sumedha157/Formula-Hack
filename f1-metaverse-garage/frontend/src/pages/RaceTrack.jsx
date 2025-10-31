@@ -8,7 +8,7 @@ export default function RaceTrack() {
   const [speed, setSpeed] = useState(0);
   const [lap, setLap] = useState(1);
   const [gear, setGear] = useState(1);
-  const [countdown, setCountdown] = useState(null); // 🟢 countdown state
+  const [countdown, setCountdown] = useState(null); 
   const navigate = useNavigate();
 
   const player = useRef({ x: 250, y: 450, angle: 0 });
@@ -166,7 +166,6 @@ export default function RaceTrack() {
     else setGear(8);
   }, [speed]);
 
-  // 🟢 Handle Countdown Lights
   const startCountdown = () => {
     let count = 3;
     setCountdown(3);
@@ -206,14 +205,13 @@ export default function RaceTrack() {
         </div>
       </div>
 
-      {/* 🟥 Countdown Lights Overlay */}
       {countdown && (
         <div className={`countdown-overlay ${countdown === "GO!" ? "green" : ""}`}>
           <h1>{countdown}</h1>
         </div>
       )}
 
-      {/* 🧭 Controls */}
+      
       <div className="controls">
         {!isRacing && !countdown && (
           <button className="start" onClick={startCountdown}>

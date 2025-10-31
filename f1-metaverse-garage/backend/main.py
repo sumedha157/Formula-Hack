@@ -20,7 +20,6 @@ class RaceConfig(BaseModel):
 
 @app.post("/api/race/setup")
 def save_race_config(config: RaceConfig):
-    # Later this can integrate with your AI training or race simulation
     print(f"✅ Race setup received: {config}")
     return {"status": "success", "received": config.dict()}
 
@@ -58,7 +57,6 @@ def root():
 
 @app.post("/predict")
 def predict(setup: Setup):
-    # temporary simple formula
     performance_score = (setup.engine * 0.5) + (setup.downforce * 0.3) - (setup.drag * 0.2)
     lap_time = 90 - (performance_score * 0.2)
     return {"predicted_lap_time": lap_time}

@@ -7,7 +7,6 @@
   --muted: rgba(255,255,255,0.6);
 }
 
-/* Reset basics */
 * { box-sizing: border-box; }
 html,body,#root { height: 100%; margin: 0; }
 body {
@@ -18,7 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* App container uses hero background image */
 .back {
   min-height: 100vh;
   background-size: cover;
@@ -30,7 +28,6 @@ body {
   flex-direction: column;
 }
 
-/* dark glass overlay to ensure text contrast */
 .overlay {
   position: absolute;
   inset: 0;
@@ -39,7 +36,6 @@ body {
   backdrop-filter: blur(2px);
 }
 
-/* Topbar */
 .topbar {
   position: relative;
   z-index: 3;
@@ -52,7 +48,6 @@ body {
   background: transparent;
 }
 
-/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -73,7 +68,6 @@ body {
   letter-spacing: 0.8px;
 }
 
-/* Player card */
 .player {
   display: flex;
   align-items: center;
@@ -102,7 +96,6 @@ body {
   color: var(--muted);
 }
 
-/* Center area */
 .center-area{
   z-index: 2;
   position: relative;
@@ -112,7 +105,6 @@ body {
   text-align: center;
 }
 
-/* Title uses a thicker display font */
 .title{
   font-family: "Orbitron", monospace;
   font-weight: 900;
@@ -124,7 +116,6 @@ body {
   text-shadow: 0 8px 30px rgba(0,0,0,0.7);
 }
 
-/* Subtitle */
 .subtitle{
   max-width: 560px;
   margin: 0 auto 26px;
@@ -134,7 +125,6 @@ body {
   line-height: 1.5;
 }
 
-/* Buttons group */
 .buttons{
   display:flex;
   flex-direction:column;
@@ -143,7 +133,6 @@ body {
   margin-top: 12px;
 }
 
-/* Primary start button */
 .menu-btn {
   width: 320px;
   max-width: 90%;
@@ -160,7 +149,6 @@ body {
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
 }
 
-/* Primary style */
 .menu-btn.primary{
   background: linear-gradient(180deg,var(--accent), #c71818);
   width: 360px;
@@ -171,11 +159,9 @@ body {
   box-shadow: 0 12px 36px rgba(226,27,27,0.28);
 }
 
-/* hover/active */
 .menu-btn:hover { transform: translateY(-3px); }
 .menu-btn:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
 
-/* Quit button lighter */
 .quit{
   margin-top: 8px;
   background: transparent;
@@ -186,7 +172,6 @@ body {
   padding: 6px;
 }
 
-/* footer tiny links */
 .footer-links{
   display:flex;
   justify-content:center;
@@ -201,17 +186,15 @@ body {
   text-decoration: none;
 }
 
-/* copyright */
 copyright, .copyright{
   margin-top: 12px;
   font-size: 11px;
   color: rgba(255,255,255,0.38);
 }
 
-/* small screens */
 @media (max-width: 600px){
   .title { font-size: 36px; }
   .menu-btn.primary { width: 86%; }
   .menu-btn { width: 86%; }
-  .player { display: none; } /* simplify topbar on small screens */
+  .player { display: none; } 
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Garage.css";
 
-// ✅ Import images from assets
 import carImg from "../assets/car1.png";
 import thumb1 from "../assets/car1.png";
 import thumb2 from "../assets/car2.png";
@@ -30,7 +29,6 @@ export default function Garage() {
 
   return (
     <div className="page">
-      {/* ===== TOP BAR ===== */}
       <header className="topbar">
         <div className="brand">
           <div className="logo-ball" />
@@ -48,9 +46,7 @@ export default function Garage() {
         </nav>
       </header>
 
-      {/* ===== MAIN CONTAINER ===== */}
       <main className="container">
-        {/* Left panel */}
         <section className="left-panel">
           <h2>RB18</h2>
           <p className="team">Oracle Red Bull Racing</p>
@@ -71,7 +67,6 @@ export default function Garage() {
           </div>
         </section>
 
-        {/* Center panel */}
         <section className="center-panel">
           <div className="car-image">
             <img src={carImg} alt="RB18" />
@@ -79,7 +74,6 @@ export default function Garage() {
           </div>
         </section>
 
-        {/* Right panel */}
         <section className="right-panel">
           <h3>Customization</h3>
           <div className="tabs">
@@ -103,7 +97,6 @@ export default function Garage() {
         </section>
       </main>
 
-      {/* ===== FOOTER CAR ROW ===== */}
       <footer className="bottom-row">
         {cars.map((car, i) => (
           <div

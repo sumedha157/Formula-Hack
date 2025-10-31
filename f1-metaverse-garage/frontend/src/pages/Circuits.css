@@ -6,7 +6,6 @@ body {
 }
 
 .app {
-  /* max-width: 900px; */
   width: 100%;
   margin: auto;
   padding: 20px;
@@ -139,7 +138,7 @@ input[type="range"] {
   color: #ff2c2c;
 }
 .start-btn {
-  display: block; /* makes it take full line width for centering */
+  display: block; 
   background: linear-gradient(180deg, #ff2c2c, #c71818);
   color: #fff;
   font-size: 18px;
@@ -147,10 +146,10 @@ input[type="range"] {
   border: none;
   border-radius: 10px;
   padding: 14px 0;
-  margin: 40px auto 0; /* centers the button horizontally */
+  margin: 40px auto 0; 
   cursor: pointer;
-  width: 80%;          /* adjusts width for large screens */
-  max-width: 380px;    /* prevents being too wide */
+  width: 80%;          
+  max-width: 380px;   
   text-align: center;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 8px 24px rgba(255, 44, 44, 0.3);
